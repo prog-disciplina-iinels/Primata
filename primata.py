@@ -10,7 +10,7 @@ tentativa = 0
 
 tempo = 0
 
-while(!habituado):
+while(not habituado):
    habituado = rd.randint(2)
 
 print("O animal está habituado")
@@ -40,7 +40,7 @@ for i in range(50):
    som = rd.randint(2)
    lado = rd.randint(2)
    
-   if((som and lado) or (!som and !lado)):
+   if((som and lado) or (not som and not lado)):
       agua += 0.5
 
 print("O animal recebeu %i ml de água" %agua)
