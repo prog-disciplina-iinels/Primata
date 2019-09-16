@@ -1,12 +1,11 @@
 from numpy import random as rd 
 
-habituacao = 0
+habituado = 0
 
 som = 0
 lado = 0
 
 agua = 0
-tentativa = 0
 
 tempo = 0
 
@@ -33,7 +32,6 @@ for i in range(20):
 
 print("O animal está pronto para a proxima etapa")
 agua = 0
-tentativa = 0
 
 for i in range(50):
 
@@ -50,4 +48,3 @@ if(tempo >= 30):
    print("O animal conseguiu realizar todas as etapas")
 else: 
    print("O animal não terminou a última etapa em tempo hábil")
-   
