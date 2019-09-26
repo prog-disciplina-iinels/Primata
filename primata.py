@@ -1,51 +1,41 @@
-from random import randint
-habituacao = bool(input("O animal está habituado: "))
+from numpy import random as rd
+def Habituado(habituado = 1):
+    return True if habituado == 1 else False
 
-som = 0
-lado = 0
-
-agua = 0
-tentativa = 0
-
-tempo = 0
-tentativa1 = 0
-
-while(not habituado):
-       habituado = bool(2)
-
-print("O animal se encontra habituado")
-aprox = 30
-dist1 = 0
-
-for i in range(20):
-       
-   aproximacao = randint(0, 31)
+def EtapaUm(habituado, aproximacaoTotal):
+    
+    agua = 0
+     
+   if (aprox > 30) or (aprox < 0):
+            print("Valor de distancia inválido")
+        return False
+    else:
+        distancia = 30
+        distancia =distancia -  aprox
+        if distancia == 0:
+            agua = 0.5
+            print("O animal toca a barra")
+            
    
-   if aproximacao > 30 or aproximacao < 0:
-      continue
-
-    aprox = aprox - dist1
-if aprox == 0:
-      agua = 0.5
-      print("O animal tocou a barra")
-      break
-print("O animal pasa para a proxima fase")
-
-agua = 0
-tentativa = 0
-
-for i in range(50):
-
-   som = randint(2)
-   lado = randint(2)
-   if(som and lado):
-    agua += 0.5
-   if (not som and not lado)):
-    agua += 0.5   
-
-    print("O animal recebeu "%agua" ml de água")
-minut = int(input("Tempo da última etapa (minutos)? "))
-if(minut >= 30):
-       print("O animal  realizou todas as fases")
-else: 
-   print("O animal não realizou a última fase no tempo hábil")
+    return [agua, True]
+    if(not Habituado(habituado)):
+        print("O animal não está habituado")
+      return False
+   def Etapa2(habituado, som, lado,aprox, minut):
+              agua = 0.0
+          if len(som) != len(lado):
+            print("As listas devem ter tamanhos iguais")
+        return False
+         if(not Habituado(habituado)):
+            print("O animal não está habituado")
+        return False
+         if(EtapaUm(habituado, aprox)):
+              for i in range(len(som)):
+                if((som[i] and lado[i]) or (not som[i] and not lado[i])):
+                agua=agua +0.5
+             if(minut >= 30):
+                print("O animal realizou todas as fases")
+            return True
+              else:
+            print("O animal não realizou a última fase no tempo hábil")
+                
